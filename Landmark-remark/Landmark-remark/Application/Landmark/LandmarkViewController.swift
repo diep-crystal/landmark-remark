@@ -12,7 +12,7 @@ import MapKit
 final class LandmarkViewController: UIViewController {
 
     @IBOutlet private weak var mapView: MKMapView!
-    var locationManager: CLLocationManager!
+    private var locationManager: CLLocationManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +28,11 @@ final class LandmarkViewController: UIViewController {
             locationManager.startUpdatingLocation()
         }
     }
+    
+    @IBAction private func saveLocation(_ sender: UIButton) {
+        
+    }
+    
 }
 
 extension LandmarkViewController: CLLocationManagerDelegate {

@@ -24,13 +24,36 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="7KU-RY-kkQ"/>
                                 </connections>
                             </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OjY-Ua-lPU">
+                                <rect key="frame" x="344" y="58" width="50" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4h-iu-nLk">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <state key="normal" title="Button" image="save-location-icon"/>
+                                        <connections>
+                                            <action selector="saveLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UIm-7a-mfO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="0w0-pP-tNi"/>
+                                    <constraint firstAttribute="bottom" secondItem="i4h-iu-nLk" secondAttribute="bottom" id="Al8-fr-mOy"/>
+                                    <constraint firstAttribute="width" secondItem="OjY-Ua-lPU" secondAttribute="height" multiplier="1:1" id="HFF-AW-KME"/>
+                                    <constraint firstItem="i4h-iu-nLk" firstAttribute="top" secondItem="OjY-Ua-lPU" secondAttribute="top" id="U2x-j0-kdR"/>
+                                    <constraint firstAttribute="trailing" secondItem="i4h-iu-nLk" secondAttribute="trailing" id="ezn-B7-1As"/>
+                                    <constraint firstItem="i4h-iu-nLk" firstAttribute="leading" secondItem="OjY-Ua-lPU" secondAttribute="leading" id="oME-cX-Gpy"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OjY-Ua-lPU" secondAttribute="trailing" constant="20" id="0RN-Fa-BAb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8hK-Aa-JVG" secondAttribute="bottom" id="83W-FJ-kqh"/>
                             <constraint firstItem="8hK-Aa-JVG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Vaf-xV-HG3"/>
                             <constraint firstItem="8hK-Aa-JVG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Xzs-oj-K9Q"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8hK-Aa-JVG" secondAttribute="trailing" id="lMv-EP-2Ns"/>
+                            <constraint firstItem="OjY-Ua-lPU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="rAj-UJ-zfz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -42,4 +65,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="save-location-icon" width="256" height="256"/>
+    </resources>
 </document>

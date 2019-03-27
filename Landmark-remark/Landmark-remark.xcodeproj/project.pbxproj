@@ -17,6 +17,8 @@
 		5F88BED8224B515E00158120 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F88BED6224B515E00158120 /* LaunchScreen.storyboard */; };
 		5F88BEE3224B515F00158120 /* Landmark_remarkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F88BEE2224B515F00158120 /* Landmark_remarkTests.swift */; };
 		5F88BEEE224B515F00158120 /* Landmark_remarkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F88BEED224B515F00158120 /* Landmark_remarkUITests.swift */; };
+		5F9EFA3D224B89C80033137C /* BaseCustomXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EFA3C224B89C80033137C /* BaseCustomXibView.swift */; };
+		5F9EFA45224B8FA40033137C /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EFA44224B8FA40033137C /* Spinner.swift */; };
 		5FDCCAB9224B5C3D0067F14A /* LandmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDCCAB8224B5C3D0067F14A /* LandmarkViewModel.swift */; };
 		5FDCCABD224B66D80067F14A /* LandmarkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDCCABC224B66D80067F14A /* LandmarkService.swift */; };
 		5FDCCABF224B6E500067F14A /* AddLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDCCABE224B6E500067F14A /* AddLocationModel.swift */; };
@@ -62,6 +64,8 @@
 		5F88BEE9224B515F00158120 /* Landmark-remarkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Landmark-remarkUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F88BEED224B515F00158120 /* Landmark_remarkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark_remarkUITests.swift; sourceTree = "<group>"; };
 		5F88BEEF224B515F00158120 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F9EFA3C224B89C80033137C /* BaseCustomXibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCustomXibView.swift; sourceTree = "<group>"; };
+		5F9EFA44224B8FA40033137C /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		5FDCCAB8224B5C3D0067F14A /* LandmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkViewModel.swift; sourceTree = "<group>"; };
 		5FDCCABC224B66D80067F14A /* LandmarkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkService.swift; sourceTree = "<group>"; };
 		5FDCCABE224B6E500067F14A /* AddLocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationModel.swift; sourceTree = "<group>"; };
@@ -217,6 +221,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		5F9EFA43224B8F970033137C /* Spinner */ = {
+			isa = PBXGroup;
+			children = (
+				5F9EFA44224B8FA40033137C /* Spinner.swift */,
+			);
+			path = Spinner;
+			sourceTree = "<group>";
+		};
 		5FDCCAB7224B5C050067F14A /* Landmark */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +241,8 @@
 		5FDCCABA224B5D000067F14A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5F9EFA43224B8F970033137C /* Spinner */,
+				5F9EFA3C224B89C80033137C /* BaseCustomXibView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -527,6 +541,7 @@
 				5FDCCAC4224B6F410067F14A /* CoreParameter.swift in Sources */,
 				5FDCCAB9224B5C3D0067F14A /* LandmarkViewModel.swift in Sources */,
 				5F88BED3224B515E00158120 /* Landmark_remark.xcdatamodeld in Sources */,
+				5F9EFA45224B8FA40033137C /* Spinner.swift in Sources */,
 				5F88BECD224B515E00158120 /* LandmarkViewController.swift in Sources */,
 				5FDCCABD224B66D80067F14A /* LandmarkService.swift in Sources */,
 				5FDCCACA224B75DD0067F14A /* EmptyResponse.swift in Sources */,
@@ -536,6 +551,7 @@
 				5FDCCAC1224B6E9B0067F14A /* LocationModel.swift in Sources */,
 				5F88BECB224B515E00158120 /* AppDelegate.swift in Sources */,
 				5FDCCAC6224B6F9C0067F14A /* CoreReponse.swift in Sources */,
+				5F9EFA3D224B89C80033137C /* BaseCustomXibView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
