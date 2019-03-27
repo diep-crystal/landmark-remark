@@ -7,11 +7,34 @@
 //
 
 import UIKit
+import MapKit
 
 final class LandmarkViewController: UIViewController {
 
+    @IBOutlet private weak var mapView: MKMapView!
+    var locationManager: CLLocationManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.showsUserLocation = true
+        mapView.delegate = self
+        
+        if (CLLocationManager.locationServicesEnabled())
+        {
+            locationManager = CLLocationManager()
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
+        }
     }
+}
+
+extension LandmarkViewController: CLLocationManagerDelegate {
+    
+}
+
+extension LandmarkViewController: MKMapViewDelegate {
+    
 }
 

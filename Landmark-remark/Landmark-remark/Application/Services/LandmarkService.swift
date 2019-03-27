@@ -16,6 +16,10 @@ final class LandmarkService {
         static let getLocations = "getLocations"
     }
     
+    /*
+     * Input: a new location model
+     * Add new an object into server
+     */
     func addNewLocation(model: AddLocationModel) -> ServiceRequest<EmptyResponse> {
         let request = ServiceRequest<EmptyResponse>()
         Kumulos.call(MethodName.addNewLocation, parameters: model.toDictionary()).success { (response, _) in
@@ -24,6 +28,9 @@ final class LandmarkService {
         return request
     }
     
+    /*
+     * Return a list of location item
+     */
     func getLocations() -> ServiceRequest<LocationCollection> {
         let request = ServiceRequest<LocationCollection>()
         Kumulos.call(MethodName.getLocations).success { (response, _) in

@@ -17,9 +17,26 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8hK-Aa-JVG">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="7KU-RY-kkQ"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8hK-Aa-JVG" secondAttribute="bottom" id="83W-FJ-kqh"/>
+                            <constraint firstItem="8hK-Aa-JVG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Vaf-xV-HG3"/>
+                            <constraint firstItem="8hK-Aa-JVG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Xzs-oj-K9Q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8hK-Aa-JVG" secondAttribute="trailing" id="lMv-EP-2Ns"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="8hK-Aa-JVG" id="YGV-5j-pd7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
