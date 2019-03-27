@@ -1,0 +1,86 @@
+PODS:
+  - Alamofire (4.8.1)
+  - KSCrash (1.15.19):
+    - KSCrash/Installations (= 1.15.19)
+  - KSCrash/Installations (1.15.19):
+    - KSCrash/Recording
+    - KSCrash/Reporting
+  - KSCrash/Recording (1.15.19):
+    - KSCrash/Recording/Tools (= 1.15.19)
+  - KSCrash/Recording/Tools (1.15.19)
+  - KSCrash/Reporting (1.15.19):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters (= 1.15.19)
+    - KSCrash/Reporting/MessageUI (= 1.15.19)
+    - KSCrash/Reporting/Sinks (= 1.15.19)
+    - KSCrash/Reporting/Tools (= 1.15.19)
+  - KSCrash/Reporting/Filters (1.15.19):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters/Alert (= 1.15.19)
+    - KSCrash/Reporting/Filters/AppleFmt (= 1.15.19)
+    - KSCrash/Reporting/Filters/Base (= 1.15.19)
+    - KSCrash/Reporting/Filters/Basic (= 1.15.19)
+    - KSCrash/Reporting/Filters/GZip (= 1.15.19)
+    - KSCrash/Reporting/Filters/JSON (= 1.15.19)
+    - KSCrash/Reporting/Filters/Sets (= 1.15.19)
+    - KSCrash/Reporting/Filters/Stringify (= 1.15.19)
+    - KSCrash/Reporting/Filters/Tools (= 1.15.19)
+  - KSCrash/Reporting/Filters/Alert (1.15.19):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters/Base
+  - KSCrash/Reporting/Filters/AppleFmt (1.15.19):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters/Base
+  - KSCrash/Reporting/Filters/Base (1.15.19):
+    - KSCrash/Recording
+  - KSCrash/Reporting/Filters/Basic (1.15.19):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters/Base
+  - KSCrash/Reporting/Filters/GZip (1.15.19):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters/Base
+  - KSCrash/Reporting/Filters/JSON (1.15.19):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters/Base
+  - KSCrash/Reporting/Filters/Sets (1.15.19):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters/AppleFmt
+    - KSCrash/Reporting/Filters/Base
+    - KSCrash/Reporting/Filters/Basic
+    - KSCrash/Reporting/Filters/GZip
+    - KSCrash/Reporting/Filters/JSON
+    - KSCrash/Reporting/Filters/Stringify
+  - KSCrash/Reporting/Filters/Stringify (1.15.19):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters/Base
+  - KSCrash/Reporting/Filters/Tools (1.15.19):
+    - KSCrash/Recording
+  - KSCrash/Reporting/MessageUI (1.15.19):
+    - KSCrash/Recording
+  - KSCrash/Reporting/Sinks (1.15.19):
+    - KSCrash/Recording
+    - KSCrash/Reporting/Filters
+    - KSCrash/Reporting/Tools
+  - KSCrash/Reporting/Tools (1.15.19):
+    - KSCrash/Recording
+  - KumulosSdkSwift (3.0.0):
+    - Alamofire (~> 4.8.1)
+    - KSCrash (~> 1.15.18)
+
+DEPENDENCIES:
+  - KumulosSdkSwift (~> 3.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - KSCrash
+    - KumulosSdkSwift
+
+SPEC CHECKSUMS:
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  KSCrash: 49855f7867f7d456905c241640a203f53588497d
+  KumulosSdkSwift: dc1f73e0073105f3054c4e3d86291b839f2f8801
+
+PODFILE CHECKSUM: 38f5748453fe9c9cc22c33327458318416ee3279
+
+COCOAPODS: 1.6.0

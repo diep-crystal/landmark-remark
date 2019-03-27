@@ -1,0 +1,6 @@
+framework module Pods_Landmark_remarkUITests {
+  umbrella header "Pods-Landmark-remarkUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module Pods_Landmark_remark {
+  umbrella header "Pods-Landmark-remark-umbrella.h"
+
+  export *
+  module * { export * }
+}
