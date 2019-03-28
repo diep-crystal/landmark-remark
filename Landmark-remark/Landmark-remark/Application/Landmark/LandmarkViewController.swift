@@ -21,17 +21,33 @@ final class LandmarkViewController: BaseViewController {
     @IBOutlet weak var segmentControl: UISegmentedControl!
     
     //MARK:- Private properties
-    var mapViewController: RemarkMapViewController?
-    var listViewController: RemarkListViewController?
+    private var mapViewController: RemarkMapViewController?
+    private var listViewController: RemarkListViewController?
+    private var currentMode: LandmarkMode = .Map
+    private let viewModel = LandmarkViewModel()
+    
     
     //MARK:- Public methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView(mode: .Map)
+        setupViewModel()
+        viewModel.getLocations()
     }
     
     //MARK:- Private methods
+    private func setupViewModel() {
+        viewModel.loadLocationSuccess?.subcribe(hdl: { [weak self](collection: LocationCollection) in
+            self?.mapViewController?.showAnnotations(locations: collection.objectList)
+        })
+        
+        viewModel.addLocationSuccess?.subcribe(hdl: { [weak self](model: LocationModel) in
+//            self
+        })
+    }
+    
     private func setupView(mode: LandmarkMode) {
+    
         switch mode {
         case .Map:
             if mapViewController == nil {
@@ -59,6 +75,9 @@ final class LandmarkViewController: BaseViewController {
             return
         }
         
+        guard currentMode != mode else {
+            return
+        }
         setupView(mode: mode)
     }
 }

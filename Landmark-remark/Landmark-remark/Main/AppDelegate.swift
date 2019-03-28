@@ -21,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let builder = KSConfigBuilder(apiKey: AppConstants.KumulosAPIKey, secretKey: AppConstants.KumulosSecretKey)
         Kumulos.initialize(config: builder.build())
         
+//        let model = AddLocationModel(username: "Diep", longitude: "105.7952583", latitude: "21.013863", note: "Trung Kinh")
+//        LandmarkService().addNewLocation(model: model)
+        
         return true
     }
 

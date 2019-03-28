@@ -32,6 +32,10 @@
 		5F9EFA65224C7A140033137C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EFA64224C7A140033137C /* BaseViewController.swift */; };
 		5F9EFA67224CA1FD0033137C /* RemardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EFA66224CA1FD0033137C /* RemardListViewModel.swift */; };
 		5F9EFA69224CA3330033137C /* RemarkMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EFA68224CA3330033137C /* RemarkMapViewModel.swift */; };
+		5F9EFA6D224CB23A0033137C /* DataBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EFA6C224CB23A0033137C /* DataBinding.swift */; };
+		5F9EFA74224CB83A0033137C /* RemarkAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EFA73224CB83A0033137C /* RemarkAnnotation.swift */; };
+		5F9EFA76224CB84E0033137C /* RemarkAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EFA75224CB84E0033137C /* RemarkAnnotationView.swift */; };
+		5F9EFA7A224CC0F20033137C /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EFA79224CC0F20033137C /* NSObject+Extension.swift */; };
 		5FDCCAB9224B5C3D0067F14A /* LandmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDCCAB8224B5C3D0067F14A /* LandmarkViewModel.swift */; };
 		5FDCCABD224B66D80067F14A /* LandmarkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDCCABC224B66D80067F14A /* LandmarkService.swift */; };
 		5FDCCABF224B6E500067F14A /* AddLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDCCABE224B6E500067F14A /* AddLocationModel.swift */; };
@@ -93,6 +97,10 @@
 		5F9EFA64224C7A140033137C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		5F9EFA66224CA1FD0033137C /* RemardListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemardListViewModel.swift; sourceTree = "<group>"; };
 		5F9EFA68224CA3330033137C /* RemarkMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarkMapViewModel.swift; sourceTree = "<group>"; };
+		5F9EFA6C224CB23A0033137C /* DataBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBinding.swift; sourceTree = "<group>"; };
+		5F9EFA73224CB83A0033137C /* RemarkAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarkAnnotation.swift; sourceTree = "<group>"; };
+		5F9EFA75224CB84E0033137C /* RemarkAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarkAnnotationView.swift; sourceTree = "<group>"; };
+		5F9EFA79224CC0F20033137C /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
 		5FDCCAB8224B5C3D0067F14A /* LandmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkViewModel.swift; sourceTree = "<group>"; };
 		5FDCCABC224B66D80067F14A /* LandmarkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkService.swift; sourceTree = "<group>"; };
 		5FDCCABE224B6E500067F14A /* AddLocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationModel.swift; sourceTree = "<group>"; };
@@ -248,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				5F9EFA57224C74740033137C /* UIViewController+Extension.swift */,
+				5F9EFA79224CC0F20033137C /* NSObject+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -273,9 +282,8 @@
 		5F9EFA59224C771E0033137C /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				5F9EFA5F224C77B10033137C /* RemarkMapViewController.swift */,
-				5F9EFA60224C77B10033137C /* RemarkMapViewController.xib */,
-				5F9EFA68224CA3330033137C /* RemarkMapViewModel.swift */,
+				5F9EFA6E224CB2980033137C /* View */,
+				5F9EFA6F224CB2A40033137C /* ViewModel */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -283,9 +291,8 @@
 		5F9EFA5A224C77250033137C /* List */ = {
 			isa = PBXGroup;
 			children = (
-				5F9EFA5B224C779D0033137C /* RemarkListViewController.swift */,
-				5F9EFA5C224C779D0033137C /* RemarkListViewController.xib */,
-				5F9EFA66224CA1FD0033137C /* RemardListViewModel.swift */,
+				5F9EFA70224CB2B10033137C /* View */,
+				5F9EFA71224CB2B80033137C /* ViewModel */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -296,6 +303,58 @@
 				5F9EFA64224C7A140033137C /* BaseViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		5F9EFA6B224CB2200033137C /* DataBinding */ = {
+			isa = PBXGroup;
+			children = (
+				5F9EFA6C224CB23A0033137C /* DataBinding.swift */,
+			);
+			path = DataBinding;
+			sourceTree = "<group>";
+		};
+		5F9EFA6E224CB2980033137C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5F9EFA72224CB7B50033137C /* Annotation */,
+				5F9EFA5F224C77B10033137C /* RemarkMapViewController.swift */,
+				5F9EFA60224C77B10033137C /* RemarkMapViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5F9EFA6F224CB2A40033137C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5F9EFA68224CA3330033137C /* RemarkMapViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5F9EFA70224CB2B10033137C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5F9EFA5B224C779D0033137C /* RemarkListViewController.swift */,
+				5F9EFA5C224C779D0033137C /* RemarkListViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5F9EFA71224CB2B80033137C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5F9EFA66224CA1FD0033137C /* RemardListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5F9EFA72224CB7B50033137C /* Annotation */ = {
+			isa = PBXGroup;
+			children = (
+				5F9EFA73224CB83A0033137C /* RemarkAnnotation.swift */,
+				5F9EFA75224CB84E0033137C /* RemarkAnnotationView.swift */,
+			);
+			path = Annotation;
 			sourceTree = "<group>";
 		};
 		5FDCCAB7224B5C050067F14A /* Landmark */ = {
@@ -312,6 +371,7 @@
 		5FDCCABA224B5D000067F14A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5F9EFA6B224CB2200033137C /* DataBinding */,
 				5F9EFA4E224B93850033137C /* Popup */,
 				5F9EFA43224B8F970033137C /* Spinner */,
 				5F9EFA3C224B89C80033137C /* BaseCustomXibView.swift */,
@@ -616,16 +676,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F9EFA58224C74740033137C /* UIViewController+Extension.swift in Sources */,
+				5F9EFA6D224CB23A0033137C /* DataBinding.swift in Sources */,
 				5FDCCAC4224B6F410067F14A /* CoreParameter.swift in Sources */,
 				5F9EFA56224BDEBF0033137C /* AppConstants.swift in Sources */,
 				5FDCCAB9224B5C3D0067F14A /* LandmarkViewModel.swift in Sources */,
 				5F9EFA5D224C779D0033137C /* RemarkListViewController.swift in Sources */,
 				5F9EFA65224C7A140033137C /* BaseViewController.swift in Sources */,
+				5F9EFA76224CB84E0033137C /* RemarkAnnotationView.swift in Sources */,
 				5F88BED3224B515E00158120 /* Landmark_remark.xcdatamodeld in Sources */,
 				5F9EFA45224B8FA40033137C /* Spinner.swift in Sources */,
 				5F88BECD224B515E00158120 /* LandmarkViewController.swift in Sources */,
 				5FDCCABD224B66D80067F14A /* LandmarkService.swift in Sources */,
 				5FDCCACA224B75DD0067F14A /* EmptyResponse.swift in Sources */,
+				5F9EFA74224CB83A0033137C /* RemarkAnnotation.swift in Sources */,
 				5FDCCAC8224B71BA0067F14A /* ServiceRequest.swift in Sources */,
 				5F9EFA61224C77B10033137C /* RemarkMapViewController.swift in Sources */,
 				5FDCCABF224B6E500067F14A /* AddLocationModel.swift in Sources */,
@@ -638,6 +701,7 @@
 				5F9EFA67224CA1FD0033137C /* RemardListViewModel.swift in Sources */,
 				5FDCCAC6224B6F9C0067F14A /* CoreReponse.swift in Sources */,
 				5F9EFA3D224B89C80033137C /* BaseCustomXibView.swift in Sources */,
+				5F9EFA7A224CC0F20033137C /* NSObject+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,14 +10,24 @@ import Foundation
 
 final class LandmarkViewModel {
     
+    //MARK:- Private properties
     private let service = LandmarkService()
+    
+    var loadLocationSuccess: DataBinding<LocationCollection>?
+    var addLocationSuccess: DataBinding<LocationModel>?
+    
+    //MARK:- Public methods
+    init() {
+        loadLocationSuccess = DataBinding()
+        addLocationSuccess = DataBinding()
+    }
     
     func saveLocation(model: AddLocationModel) {
         Spinner.shared.show()
-        service.addNewLocation(model: model).cloudResponse { (response) in
-            //
+        service.addNewLocation(model: model).cloudResponse { [weak self](response) in
+            self?.addLocationSuccess?.value = LocationModel(parametes: model)
             }.cloudError { (msg: String, _: Int?) in
-                //
+                //TODO: handle error
             }.finally {
                 Spinner.shared.dismiss()
         }
@@ -26,9 +36,9 @@ final class LandmarkViewModel {
     func getLocations() {
         
         service.getLocations().cloudResponse { [weak self](collection: LocationCollection) in
-            
+            self?.loadLocationSuccess?.value = collection
             }.cloudError { (msgError, _: Int?) in
-                //
+                //TODO: handle error
             }.finally {
                 Spinner.shared.dismiss()
         }

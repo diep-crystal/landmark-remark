@@ -12,8 +12,8 @@ final class LocationModel: CoreResponse {
 
     var locationID: Int?
     var username: String?
-    var longitude: String?
-    var latitude: String?
+    var longitude: Double = 0.0
+    var latitude: Double = 0.0
     var note: String?
     var timeCreated: Date?
     
@@ -22,7 +22,25 @@ final class LocationModel: CoreResponse {
         locationID = data?["locationID"] as? Int
         timeCreated = data?["timeCreated"] as? Date
         note = data?["note"] as? String
-        latitude = data?["latitude"] as? String
-        longitude = data?["longitude"] as? String
+        
+        if let temp = data?["latitude"] as? String, let doubleValue = Double(temp) {
+            latitude = doubleValue
+        }
+        
+        if let temp = data?["longitude"] as? String, let doubleValue = Double(temp) {
+            longitude = doubleValue
+        }
+    }
+    
+    init(parametes: AddLocationModel) {
+        username = parametes.username
+        note = parametes.note
+        if let temp = parametes.latitude, let doubleValue = Double(temp) {
+            latitude = doubleValue
+        }
+        
+        if let temp = parametes.longitude, let doubleValue = Double(temp) {
+            longitude = doubleValue
+        }
     }
 }

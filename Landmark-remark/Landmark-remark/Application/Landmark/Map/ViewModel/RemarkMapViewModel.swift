@@ -6,4 +6,10 @@
 //  Copyright © 2019 Diep Nguyen. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+final class RemarkMapViewModel {
+    
+}
+
+
