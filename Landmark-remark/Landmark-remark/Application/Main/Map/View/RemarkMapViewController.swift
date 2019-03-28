@@ -15,10 +15,8 @@ final class RemarkMapViewController: UIViewController {
     @IBOutlet private weak var mapView: MKMapView!
     
     //MARK:- Private propeties
-    private let regionRadius: CLLocationDistance = 10000
-    
-    //MARK:- Public properties
-    let viewModel = RemarkMapViewModel()
+    private let regionRadius: CLLocationDistance = 2000
+    private let viewModel = RemarkMapViewModel()
     
     //MARK:- Public methods
     override func viewDidLoad() {

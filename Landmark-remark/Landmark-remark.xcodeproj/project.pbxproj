@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		26230A6B75B5B7F7D459038D /* Pods_Landmark_remark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9280C7756C121AC0F60A4B /* Pods_Landmark_remark.framework */; };
 		426611429869AB0644595D0A /* Pods_Landmark_remarkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6193B1A4D73BF639D20089E /* Pods_Landmark_remarkUITests.framework */; };
+		5F0BC6D9224D31C2007C3384 /* SearchLandmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0BC6D7224D31C2007C3384 /* SearchLandmarkViewController.swift */; };
+		5F0BC6DA224D31C2007C3384 /* SearchLandmarkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F0BC6D8224D31C2007C3384 /* SearchLandmarkViewController.xib */; };
+		5F0BC6DC224D321D007C3384 /* SearchLandmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0BC6DB224D321D007C3384 /* SearchLandmarkViewModel.swift */; };
 		5F88BECB224B515E00158120 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F88BECA224B515E00158120 /* AppDelegate.swift */; };
 		5F88BECD224B515E00158120 /* LandmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F88BECC224B515E00158120 /* LandmarkViewController.swift */; };
 		5F88BED0224B515E00158120 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F88BECE224B515E00158120 /* Main.storyboard */; };
@@ -74,6 +77,9 @@
 
 /* Begin PBXFileReference section */
 		47009D12451F66197607A7C6 /* Pods-Landmark-remarkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Landmark-remarkUITests.release.xcconfig"; path = "Target Support Files/Pods-Landmark-remarkUITests/Pods-Landmark-remarkUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5F0BC6D7224D31C2007C3384 /* SearchLandmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLandmarkViewController.swift; sourceTree = "<group>"; };
+		5F0BC6D8224D31C2007C3384 /* SearchLandmarkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchLandmarkViewController.xib; sourceTree = "<group>"; };
+		5F0BC6DB224D321D007C3384 /* SearchLandmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLandmarkViewModel.swift; sourceTree = "<group>"; };
 		5F88BEC7224B515E00158120 /* Landmark-remark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Landmark-remark.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F88BECA224B515E00158120 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F88BECC224B515E00158120 /* LandmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +168,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F0BC6D4224D317E007C3384 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				5F0BC6D6224D318D007C3384 /* View */,
+				5F0BC6D5224D3186007C3384 /* ViewModel */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		5F0BC6D5224D3186007C3384 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5F0BC6DB224D321D007C3384 /* SearchLandmarkViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5F0BC6D6224D318D007C3384 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5F0BC6D7224D31C2007C3384 /* SearchLandmarkViewController.swift */,
+				5F0BC6D8224D31C2007C3384 /* SearchLandmarkViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		5F88BEBE224B515E00158120 = {
 			isa = PBXGroup;
 			children = (
@@ -429,6 +461,7 @@
 		5FDCCAB7224B5C050067F14A /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				5F0BC6D4224D317E007C3384 /* Search */,
 				5F9EFA5A224C77250033137C /* List */,
 				5F9EFA59224C771E0033137C /* Map */,
 				5F9EFA8B224D15050033137C /* Landmark */,
@@ -597,6 +630,7 @@
 				5F88BED8224B515E00158120 /* LaunchScreen.storyboard in Resources */,
 				5F9EFA4A224B931E0033137C /* Localizable.strings in Resources */,
 				5F9EFA62224C77B10033137C /* RemarkMapViewController.xib in Resources */,
+				5F0BC6DA224D31C2007C3384 /* SearchLandmarkViewController.xib in Resources */,
 				5F9EFA52224B94490033137C /* PopupSaveLocation.xib in Resources */,
 				5F88BED5224B515E00158120 /* Assets.xcassets in Resources */,
 				5F88BED0224B515E00158120 /* Main.storyboard in Resources */,
@@ -748,6 +782,7 @@
 				5F9EFA7E224CD52A0033137C /* RemarkItemTableViewCell.swift in Sources */,
 				5F9EFA58224C74740033137C /* UIViewController+Extension.swift in Sources */,
 				5F9EFA90224D15510033137C /* PopupSaveLocationViewModel.swift in Sources */,
+				5F0BC6DC224D321D007C3384 /* SearchLandmarkViewModel.swift in Sources */,
 				5F9EFA6D224CB23A0033137C /* DataBinding.swift in Sources */,
 				5FDCCAC4224B6F410067F14A /* CoreParameter.swift in Sources */,
 				5F9EFA56224BDEBF0033137C /* AppConstants.swift in Sources */,
@@ -765,6 +800,7 @@
 				5FDCCAC8224B71BA0067F14A /* ServiceRequest.swift in Sources */,
 				5F9EFA82224CD5ED0033137C /* CircleView.swift in Sources */,
 				5F9EFA8A224CE9F70033137C /* UIView+Extension.swift in Sources */,
+				5F0BC6D9224D31C2007C3384 /* SearchLandmarkViewController.swift in Sources */,
 				5F9EFA61224C77B10033137C /* RemarkMapViewController.swift in Sources */,
 				5FDCCABF224B6E500067F14A /* AddLocationModel.swift in Sources */,
 				5F9EFA54224BD4440033137C /* BasePopupView.swift in Sources */,

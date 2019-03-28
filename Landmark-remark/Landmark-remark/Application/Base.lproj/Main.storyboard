@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wNo-hl-Hvc">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -30,38 +30,51 @@
                                             <segment title="Map"/>
                                             <segment title="List"/>
                                         </segments>
-                                        <color key="tintColor" red="0.98981565240000002" green="0.4543656707" blue="0.13123542069999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.9882352941176471" green="0.45490196078431372" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="switchSegment:" destination="BYZ-38-t0r" eventType="valueChanged" id="tLL-NB-Uwe"/>
                                         </connections>
                                     </segmentedControl>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OjY-Ua-lPU">
-                                        <rect key="frame" x="356" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="306" y="0.0" width="100" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4h-iu-nLk">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                                <state key="normal" title="Button" image="save-location-icon"/>
-                                                <connections>
-                                                    <action selector="saveLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UIm-7a-mfO"/>
-                                                </connections>
-                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VDg-rt-j5t">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y9g-0d-Wfm">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                                        <state key="normal" title="Button" image="ic-search"/>
+                                                        <connections>
+                                                            <action selector="actionSearch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RCb-nn-unO"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4h-iu-nLk">
+                                                        <rect key="frame" x="50" y="0.0" width="50" height="50"/>
+                                                        <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                                        <state key="normal" title="Button" image="ic-plus"/>
+                                                        <connections>
+                                                            <action selector="saveLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UIm-7a-mfO"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="0w0-pP-tNi"/>
-                                            <constraint firstAttribute="bottom" secondItem="i4h-iu-nLk" secondAttribute="bottom" id="Al8-fr-mOy"/>
-                                            <constraint firstAttribute="width" secondItem="OjY-Ua-lPU" secondAttribute="height" multiplier="1:1" id="HFF-AW-KME"/>
-                                            <constraint firstItem="i4h-iu-nLk" firstAttribute="top" secondItem="OjY-Ua-lPU" secondAttribute="top" id="U2x-j0-kdR"/>
-                                            <constraint firstAttribute="trailing" secondItem="i4h-iu-nLk" secondAttribute="trailing" id="ezn-B7-1As"/>
-                                            <constraint firstItem="i4h-iu-nLk" firstAttribute="leading" secondItem="OjY-Ua-lPU" secondAttribute="leading" id="oME-cX-Gpy"/>
+                                            <constraint firstAttribute="width" constant="100" id="IQ1-qA-PaE"/>
+                                            <constraint firstAttribute="trailing" secondItem="VDg-rt-j5t" secondAttribute="trailing" id="MUy-aH-hex"/>
+                                            <constraint firstAttribute="bottom" secondItem="VDg-rt-j5t" secondAttribute="bottom" id="U4M-zg-VMr"/>
+                                            <constraint firstItem="VDg-rt-j5t" firstAttribute="leading" secondItem="OjY-Ua-lPU" secondAttribute="leading" id="W2Z-qP-DGt"/>
+                                            <constraint firstAttribute="height" constant="50" id="ko1-fz-vzP"/>
+                                            <constraint firstItem="VDg-rt-j5t" firstAttribute="top" secondItem="OjY-Ua-lPU" secondAttribute="top" id="kuR-IV-ley"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="OjY-Ua-lPU" secondAttribute="trailing" constant="8" id="B5R-Oa-hIE"/>
                                     <constraint firstAttribute="height" constant="50" id="Fex-8C-jg0"/>
-                                    <constraint firstAttribute="trailing" secondItem="OjY-Ua-lPU" secondAttribute="trailing" constant="8" id="Rqa-U0-abY"/>
                                     <constraint firstItem="X6X-bl-8FR" firstAttribute="centerX" secondItem="MT9-wF-bks" secondAttribute="centerX" id="lFi-0l-T1r"/>
                                     <constraint firstItem="X6X-bl-8FR" firstAttribute="centerY" secondItem="MT9-wF-bks" secondAttribute="centerY" id="oEG-Dq-Qjz"/>
                                     <constraint firstItem="OjY-Ua-lPU" firstAttribute="centerY" secondItem="MT9-wF-bks" secondAttribute="centerY" id="yoy-3f-R2H"/>
@@ -84,6 +97,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="8cE-cB-N8c"/>
                     <connections>
                         <outlet property="containerView" destination="Jw5-aC-TcK" id="rV6-5G-opA"/>
                         <outlet property="segmentControl" destination="X6X-bl-8FR" id="RPE-rl-gFu"/>
@@ -91,9 +105,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="671" y="495"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DAd-gI-DwS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="wNo-hl-Hvc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MJH-Bg-e67">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="z71-Fq-e57"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bFS-42-LX6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-445" y="495"/>
         </scene>
     </scenes>
     <resources>
-        <image name="save-location-icon" width="256" height="256"/>
+        <image name="ic-plus" width="20" height="20"/>
+        <image name="ic-search" width="20" height="20"/>
     </resources>
 </document>

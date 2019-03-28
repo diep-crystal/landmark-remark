@@ -105,6 +105,12 @@ final class LandmarkViewController: BaseViewController {
         })
     }
     
+    @IBAction private func actionSearch(_ sender: UIButton) {
+        let searchViewController = SearchLandmarkViewController()
+        searchViewController.fillData(locations: viewModel.loadLocationSuccess?.value?.objectList)
+        navigationController?.pushViewController(searchViewController, animated: true)
+    }
+    
     @IBAction private func switchSegment(_ sender: UISegmentedControl) {
         
         guard let mode = LandmarkMode(rawValue: sender.selectedSegmentIndex), currentMode != mode else {
