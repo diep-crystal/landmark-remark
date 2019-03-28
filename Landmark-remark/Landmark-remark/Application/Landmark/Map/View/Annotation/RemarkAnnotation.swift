@@ -28,4 +28,12 @@ final class RemarkAnnotation: NSObject, MKAnnotation {
         self.coordinate = coordinate
     }
     
+    func mapItem() -> MKMapItem {
+
+        let placemark = MKPlacemark(coordinate: coordinate)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = title
+        
+        return mapItem
+    }
 }

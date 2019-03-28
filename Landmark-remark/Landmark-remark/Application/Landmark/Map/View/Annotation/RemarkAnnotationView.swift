@@ -28,6 +28,12 @@ final class RemarkAnnotationView: MKAnnotationView {
             } else {
                 image = nil
             }
+            
+            let detailLabel = UILabel()
+            detailLabel.numberOfLines = 0
+            detailLabel.font = detailLabel.font.withSize(12)
+            detailLabel.text = marker.subtitle
+            detailCalloutAccessoryView = detailLabel
         }
     }
 }

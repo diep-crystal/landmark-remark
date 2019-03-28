@@ -79,6 +79,8 @@ final class LandmarkViewController: BaseViewController {
         guard currentMode != mode else {
             return
         }
+        
+        currentMode = mode
         setupView(mode: mode)
     }
 }
