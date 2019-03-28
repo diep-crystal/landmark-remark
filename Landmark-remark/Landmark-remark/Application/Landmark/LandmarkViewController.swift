@@ -9,37 +9,58 @@
 import UIKit
 import MapKit
 
-final class LandmarkViewController: UIViewController {
+enum LandmarkMode: Int {
+    case Map
+    case List
+}
 
-    @IBOutlet private weak var mapView: MKMapView!
-    private var locationManager: CLLocationManager!
+final class LandmarkViewController: BaseViewController {
+
+    //MARK:- Outlets
+    @IBOutlet private weak var containerView: UIView!
+    @IBOutlet weak var segmentControl: UISegmentedControl!
     
+    //MARK:- Private properties
+    var mapViewController: RemarkMapViewController?
+    var listViewController: RemarkListViewController?
+    
+    //MARK:- Public methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapView.showsUserLocation = true
-        mapView.delegate = self
-        
-        if (CLLocationManager.locationServicesEnabled())
-        {
-            locationManager = CLLocationManager()
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.requestAlwaysAuthorization()
-            locationManager.startUpdatingLocation()
+        setupView(mode: .Map)
+    }
+    
+    //MARK:- Private methods
+    private func setupView(mode: LandmarkMode) {
+        switch mode {
+        case .Map:
+            if mapViewController == nil {
+                mapViewController = RemarkMapViewController()
+            }
+            remove(asChildViewController: listViewController)
+            add(containerView: containerView, asChildViewController: mapViewController)
+        case .List:
+            if listViewController == nil {
+                listViewController = RemarkListViewController()
+            }
+            remove(asChildViewController: mapViewController)
+            add(containerView: containerView, asChildViewController: listViewController)
         }
     }
     
+    //MARK:- Actions
     @IBAction private func saveLocation(_ sender: UIButton) {
         
     }
     
+    @IBAction private func switchSegment(_ sender: UISegmentedControl) {
+        
+        guard let mode = LandmarkMode(rawValue: sender.selectedSegmentIndex) else {
+            return
+        }
+        
+        setupView(mode: mode)
+    }
 }
 
-extension LandmarkViewController: CLLocationManagerDelegate {
-    
-}
-
-extension LandmarkViewController: MKMapViewDelegate {
-    
-}
 

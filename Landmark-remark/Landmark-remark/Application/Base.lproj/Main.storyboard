@@ -18,47 +18,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8hK-Aa-JVG">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="7KU-RY-kkQ"/>
-                                </connections>
-                            </mapView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OjY-Ua-lPU">
-                                <rect key="frame" x="344" y="58" width="50" height="50"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MT9-wF-bks">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4h-iu-nLk">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <state key="normal" title="Button" image="save-location-icon"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="X6X-bl-8FR">
+                                        <rect key="frame" x="147" y="11" width="120" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="GMA-XG-Nb2"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Map"/>
+                                            <segment title="List"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.98981565240000002" green="0.4543656707" blue="0.13123542069999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="saveLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UIm-7a-mfO"/>
+                                            <action selector="switchSegment:" destination="BYZ-38-t0r" eventType="valueChanged" id="tLL-NB-Uwe"/>
                                         </connections>
-                                    </button>
+                                    </segmentedControl>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OjY-Ua-lPU">
+                                        <rect key="frame" x="356" y="0.0" width="50" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4h-iu-nLk">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                <state key="normal" title="Button" image="save-location-icon"/>
+                                                <connections>
+                                                    <action selector="saveLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UIm-7a-mfO"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="0w0-pP-tNi"/>
+                                            <constraint firstAttribute="bottom" secondItem="i4h-iu-nLk" secondAttribute="bottom" id="Al8-fr-mOy"/>
+                                            <constraint firstAttribute="width" secondItem="OjY-Ua-lPU" secondAttribute="height" multiplier="1:1" id="HFF-AW-KME"/>
+                                            <constraint firstItem="i4h-iu-nLk" firstAttribute="top" secondItem="OjY-Ua-lPU" secondAttribute="top" id="U2x-j0-kdR"/>
+                                            <constraint firstAttribute="trailing" secondItem="i4h-iu-nLk" secondAttribute="trailing" id="ezn-B7-1As"/>
+                                            <constraint firstItem="i4h-iu-nLk" firstAttribute="leading" secondItem="OjY-Ua-lPU" secondAttribute="leading" id="oME-cX-Gpy"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="0w0-pP-tNi"/>
-                                    <constraint firstAttribute="bottom" secondItem="i4h-iu-nLk" secondAttribute="bottom" id="Al8-fr-mOy"/>
-                                    <constraint firstAttribute="width" secondItem="OjY-Ua-lPU" secondAttribute="height" multiplier="1:1" id="HFF-AW-KME"/>
-                                    <constraint firstItem="i4h-iu-nLk" firstAttribute="top" secondItem="OjY-Ua-lPU" secondAttribute="top" id="U2x-j0-kdR"/>
-                                    <constraint firstAttribute="trailing" secondItem="i4h-iu-nLk" secondAttribute="trailing" id="ezn-B7-1As"/>
-                                    <constraint firstItem="i4h-iu-nLk" firstAttribute="leading" secondItem="OjY-Ua-lPU" secondAttribute="leading" id="oME-cX-Gpy"/>
+                                    <constraint firstAttribute="height" constant="50" id="Fex-8C-jg0"/>
+                                    <constraint firstAttribute="trailing" secondItem="OjY-Ua-lPU" secondAttribute="trailing" constant="8" id="Rqa-U0-abY"/>
+                                    <constraint firstItem="X6X-bl-8FR" firstAttribute="centerX" secondItem="MT9-wF-bks" secondAttribute="centerX" id="lFi-0l-T1r"/>
+                                    <constraint firstItem="X6X-bl-8FR" firstAttribute="centerY" secondItem="MT9-wF-bks" secondAttribute="centerY" id="oEG-Dq-Qjz"/>
+                                    <constraint firstItem="OjY-Ua-lPU" firstAttribute="centerY" secondItem="MT9-wF-bks" secondAttribute="centerY" id="yoy-3f-R2H"/>
                                 </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jw5-aC-TcK">
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OjY-Ua-lPU" secondAttribute="trailing" constant="20" id="0RN-Fa-BAb"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8hK-Aa-JVG" secondAttribute="bottom" id="83W-FJ-kqh"/>
-                            <constraint firstItem="8hK-Aa-JVG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Vaf-xV-HG3"/>
-                            <constraint firstItem="8hK-Aa-JVG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Xzs-oj-K9Q"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8hK-Aa-JVG" secondAttribute="trailing" id="lMv-EP-2Ns"/>
-                            <constraint firstItem="OjY-Ua-lPU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="rAj-UJ-zfz"/>
+                            <constraint firstItem="MT9-wF-bks" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="C32-Jg-cye"/>
+                            <constraint firstItem="Jw5-aC-TcK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Hnb-1x-Y1m"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jw5-aC-TcK" secondAttribute="trailing" id="LgN-xe-BvX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MT9-wF-bks" secondAttribute="trailing" id="ckV-bq-ghY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Jw5-aC-TcK" secondAttribute="bottom" id="hSP-nE-33m"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="MT9-wF-bks" secondAttribute="top" id="p7m-AF-zNu"/>
+                            <constraint firstItem="Jw5-aC-TcK" firstAttribute="top" secondItem="MT9-wF-bks" secondAttribute="bottom" id="wg9-SC-X89"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="mapView" destination="8hK-Aa-JVG" id="YGV-5j-pd7"/>
+                        <outlet property="containerView" destination="Jw5-aC-TcK" id="rV6-5G-opA"/>
+                        <outlet property="segmentControl" destination="X6X-bl-8FR" id="RPE-rl-gFu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

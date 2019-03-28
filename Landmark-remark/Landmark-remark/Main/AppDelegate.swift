@@ -18,15 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let builder = KSConfigBuilder(apiKey: "2470e5b1-f3c6-4d23-bb64-7bf5d35391f0", secretKey: "soAwW0gV0svwCMK0S6PW1r7SjCCizKZQxq8F")
+        let builder = KSConfigBuilder(apiKey: AppConstants.KumulosAPIKey, secretKey: AppConstants.KumulosSecretKey)
         Kumulos.initialize(config: builder.build())
-        
-        
-        let service = LandmarkService()
-        service.getLocations()
-        
-        let add = AddLocationModel(username: "diep", longitude: "12333.34", latitude: "1234.56", note: "diep test")
-//        service.addNewLocation(model: add)
         
         return true
     }
