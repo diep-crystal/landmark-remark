@@ -10,7 +10,7 @@ import UIKit
 
 class BasePopupView: UIView {
     
-    func show(popupView: UIView) {
+    func show(popupView: UIView, with frame: CGRect?) {
         guard let window = UIApplication.shared.keyWindow else {
             return
         }
@@ -22,8 +22,14 @@ class BasePopupView: UIView {
             }
         }
         
-        popupView.frame = window.bounds
+        if let frame = frame {
+            popupView.frame = frame
+        } else {
+            popupView.frame = window.bounds
+        }
+        
         window.addSubview(popupView)
+        popupView.center = window.center
     }
     
     func dismiss() {

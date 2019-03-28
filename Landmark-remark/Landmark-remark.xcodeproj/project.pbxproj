@@ -41,6 +41,7 @@
 		5F9EFA82224CD5ED0033137C /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EFA81224CD5ED0033137C /* CircleView.swift */; };
 		5F9EFA84224CD88C0033137C /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EFA83224CD88C0033137C /* Date+Extension.swift */; };
 		5F9EFA88224CDA4A0033137C /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EFA87224CDA4A0033137C /* UITableView+Extension.swift */; };
+		5F9EFA8A224CE9F70033137C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EFA89224CE9F70033137C /* UIView+Extension.swift */; };
 		5FDCCAB9224B5C3D0067F14A /* LandmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDCCAB8224B5C3D0067F14A /* LandmarkViewModel.swift */; };
 		5FDCCABD224B66D80067F14A /* LandmarkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDCCABC224B66D80067F14A /* LandmarkService.swift */; };
 		5FDCCABF224B6E500067F14A /* AddLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDCCABE224B6E500067F14A /* AddLocationModel.swift */; };
@@ -111,6 +112,7 @@
 		5F9EFA81224CD5ED0033137C /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		5F9EFA83224CD88C0033137C /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		5F9EFA87224CDA4A0033137C /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		5F9EFA89224CE9F70033137C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		5FDCCAB8224B5C3D0067F14A /* LandmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkViewModel.swift; sourceTree = "<group>"; };
 		5FDCCABC224B66D80067F14A /* LandmarkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkService.swift; sourceTree = "<group>"; };
 		5FDCCABE224B6E500067F14A /* AddLocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationModel.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				5F9EFA79224CC0F20033137C /* NSObject+Extension.swift */,
 				5F9EFA83224CD88C0033137C /* Date+Extension.swift */,
 				5F9EFA87224CDA4A0033137C /* UITableView+Extension.swift */,
+				5F9EFA89224CE9F70033137C /* UIView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -725,6 +728,7 @@
 				5F9EFA74224CB83A0033137C /* RemarkAnnotation.swift in Sources */,
 				5FDCCAC8224B71BA0067F14A /* ServiceRequest.swift in Sources */,
 				5F9EFA82224CD5ED0033137C /* CircleView.swift in Sources */,
+				5F9EFA8A224CE9F70033137C /* UIView+Extension.swift in Sources */,
 				5F9EFA61224C77B10033137C /* RemarkMapViewController.swift in Sources */,
 				5FDCCABF224B6E500067F14A /* AddLocationModel.swift in Sources */,
 				5F9EFA54224BD4440033137C /* BasePopupView.swift in Sources */,

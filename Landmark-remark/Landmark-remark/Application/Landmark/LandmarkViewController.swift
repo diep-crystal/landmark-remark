@@ -67,7 +67,12 @@ final class LandmarkViewController: BaseViewController {
     
     //MARK:- Actions
     @IBAction private func saveLocation(_ sender: UIButton) {
-        
+        let popupView = PopupSaveLocation.fromNib() as PopupSaveLocation
+        popupView.willShow(firstButtonClosure: {
+            //
+        }) {
+            
+        }
     }
     
     @IBAction private func switchSegment(_ sender: UISegmentedControl) {
