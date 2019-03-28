@@ -58,6 +58,7 @@ final class LandmarkViewController: BaseViewController {
         case .List:
             if listViewController == nil {
                 listViewController = RemarkListViewController()
+                listViewController?.fillData(locations: viewModel.loadLocationSuccess?.value?.objectList)
             }
             remove(asChildViewController: mapViewController)
             add(containerView: containerView, asChildViewController: listViewController)
