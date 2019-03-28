@@ -15,7 +15,7 @@ final class LandmarkViewModel {
     
     var loadLocationSuccess: DataBinding<LocationCollection>?
     var addLocationSuccess: DataBinding<LocationModel>?
-    
+
     //MARK:- Public methods
     init() {
         loadLocationSuccess = DataBinding()

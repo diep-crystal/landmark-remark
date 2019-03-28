@@ -15,8 +15,7 @@ final class RemarkMapViewController: UIViewController {
     @IBOutlet private weak var mapView: MKMapView!
     
     //MARK:- Private propeties
-    private var locationManager: CLLocationManager!
-    private let regionRadius: CLLocationDistance = 1000
+    private let regionRadius: CLLocationDistance = 10000
     
     //MARK:- Public properties
     let viewModel = RemarkMapViewModel()
@@ -25,59 +24,34 @@ final class RemarkMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMapView()
-        requestLocationAuthorizationStatus()
-        
-        let initialLocation = CLLocation(latitude: 21.013863, longitude: 105.7952583)
-        focusMapOn(location: initialLocation)
     }
     
-    func showAnnotations(locations: [LocationModel]) {
+    func showAnnotations(locations: [LocationModel]?) {
+        
+        guard let locations = locations else {
+            return
+        }
+        
         let annotations = locations.map { (location: LocationModel) -> RemarkAnnotation in
             let annotation = RemarkAnnotation(title: location.username ?? "", locationName: location.note ?? "", coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude))
             return annotation
-        }
+        }.compactMap({$0})
+        
         mapView.removeAnnotations(mapView.annotations)
         mapView.addAnnotations(annotations)
     }
     
-    //MARK:- Private methods
-    private func requestLocationAuthorizationStatus() {
-        guard CLLocationManager.locationServicesEnabled() else {
-            return
-        }
-        
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
-        if (CLLocationManager.authorizationStatus() == .authorizedAlways) {
-           mapView.showsUserLocation = true
-        } else {
-            locationManager.requestAlwaysAuthorization()
-        }
-    }
-    
-    private func setupMapView() {
-        mapView.delegate = self
-    }
-    
-    private func focusMapOn(location: CLLocation) {
+    func focusMapOn(location: CLLocation) {
         let coodinateLocation = MKCoordinateRegion(center: location.coordinate,
                                                    latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         mapView.setRegion(coodinateLocation, animated: true)
     }
-}
-
-// MARK:- CLLocationManagerDelegate
-extension RemarkMapViewController: CLLocationManagerDelegate {
     
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        switch status {
-        case .authorizedAlways, .authorizedWhenInUse:
-            mapView.showsUserLocation = true
-        default:
-            break
-        }
+    //MARK:- Private methods
+    
+    private func setupMapView() {
+        mapView.delegate = self
+        mapView.showsUserLocation = true
     }
 }
 
@@ -97,6 +71,5 @@ extension RemarkMapViewController: MKMapViewDelegate {
         }
         
         return pinView
-        
     }
 }

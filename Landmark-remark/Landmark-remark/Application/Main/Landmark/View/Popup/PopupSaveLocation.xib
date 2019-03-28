@@ -109,7 +109,7 @@
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="actionCancel:" destination="-1" eventType="touchUpInside" id="d5k-HA-kb9"/>
+                                                        <action selector="actionCancel:" destination="iN0-l3-epB" eventType="touchUpInside" id="gC5-Z2-e0r"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -124,14 +124,14 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8J8-wm-OhW">
                                             <rect key="frame" x="197" y="0.0" width="197" height="50"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJc-xN-vNc">
+                                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJc-xN-vNc">
                                                     <rect key="frame" x="5" y="3" width="187" height="44"/>
-                                                    <color key="backgroundColor" red="0.99215686270000003" green="0.4549019608" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" title="Save">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="actionSave:" destination="-1" eventType="touchUpInside" id="v66-8t-gth"/>
+                                                        <action selector="actionSave:" destination="iN0-l3-epB" eventType="touchUpInside" id="IrH-jG-B2s"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -168,6 +168,11 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="buttonSave" destination="PJc-xN-vNc" id="OTj-dV-pht"/>
+                <outlet property="notesTextView" destination="JK2-7a-UXv" id="Qt2-l9-5aJ"/>
+                <outlet property="usernameTextField" destination="IKa-cS-Y8W" id="C5y-0c-hVF"/>
+            </connections>
             <point key="canvasLocation" x="-71.014492753623188" y="-79.352678571428569"/>
         </view>
     </objects>

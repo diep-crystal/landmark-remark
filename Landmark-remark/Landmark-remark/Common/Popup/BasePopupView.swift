@@ -10,6 +10,8 @@ import UIKit
 
 class BasePopupView: UIView {
     
+    private var viewContainer: UIView?
+    
     func show(popupView: UIView, with frame: CGRect?) {
         guard let window = UIApplication.shared.keyWindow else {
             return
@@ -28,11 +30,25 @@ class BasePopupView: UIView {
             popupView.frame = window.bounds
         }
         
-        window.addSubview(popupView)
-        popupView.center = window.center
+        
+        viewContainer = UIView(frame: window.bounds)
+        viewContainer?.backgroundColor = UIColor(white: 0, alpha: 0.5)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tapGesture.numberOfTapsRequired = 1
+        viewContainer?.addGestureRecognizer(tapGesture)
+        
+        viewContainer?.addSubview(popupView)
+        popupView.center = CGPoint(x: viewContainer!.center.x, y: viewContainer!.center.y - 100)
+        window.addSubview(viewContainer!)
     }
     
     func dismiss() {
-        self.removeFromSuperview()
+        viewContainer?.removeFromSuperview()
+        removeFromSuperview()
+    }
+    
+    @objc private func dismissKeyboard() {
+        endEditing(true)
     }
 }

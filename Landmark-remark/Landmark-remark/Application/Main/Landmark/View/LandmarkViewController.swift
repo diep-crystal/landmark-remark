@@ -25,11 +25,13 @@ final class LandmarkViewController: BaseViewController {
     private var listViewController: RemarkListViewController?
     private var currentMode: LandmarkMode = .Map
     private let viewModel = LandmarkViewModel()
-    
+    private var locationManager: CLLocationManager!
+    private var currentLocation: CLLocation?
     
     //MARK:- Public methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        requestLocationAuthorizationStatus()
         setupView(mode: .Map)
         setupViewModel()
         viewModel.getLocations()
@@ -38,11 +40,18 @@ final class LandmarkViewController: BaseViewController {
     //MARK:- Private methods
     private func setupViewModel() {
         viewModel.loadLocationSuccess?.subcribe(hdl: { [weak self](collection: LocationCollection) in
+        
             self?.mapViewController?.showAnnotations(locations: collection.objectList)
         })
         
         viewModel.addLocationSuccess?.subcribe(hdl: { [weak self](model: LocationModel) in
-//            self
+            let newCollection = self?.viewModel.loadLocationSuccess?.value
+            newCollection?.objectList.append(model)
+            if self?.currentMode == .Map {
+                self?.mapViewController?.showAnnotations(locations: newCollection?.objectList)
+            } else {
+                self?.listViewController?.fillData(locations: newCollection?.objectList)
+            }
         })
     }
     
@@ -65,28 +74,61 @@ final class LandmarkViewController: BaseViewController {
         }
     }
     
+    private func requestLocationAuthorizationStatus() {
+        guard CLLocationManager.locationServicesEnabled() else {
+            return
+        }
+        
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
+    
     //MARK:- Actions
     @IBAction private func saveLocation(_ sender: UIButton) {
         let popupView = PopupSaveLocation.fromNib() as PopupSaveLocation
-        popupView.willShow(firstButtonClosure: {
-            //
-        }) {
+        popupView.willShow(rightClosure: { [weak self](model) in
             
-        }
+            guard let newLat = self?.currentLocation?.coordinate.latitude,
+                let newLong = self?.currentLocation?.coordinate.longitude else {
+                    return
+            }
+            
+            var newLocation = model
+            newLocation.latitude = "\(newLat)"
+            newLocation.longitude = "\(newLong)"
+            
+            self?.viewModel.saveLocation(model: newLocation)
+        })
     }
     
     @IBAction private func switchSegment(_ sender: UISegmentedControl) {
         
-        guard let mode = LandmarkMode(rawValue: sender.selectedSegmentIndex) else {
-            return
-        }
-        
-        guard currentMode != mode else {
+        guard let mode = LandmarkMode(rawValue: sender.selectedSegmentIndex), currentMode != mode else {
             return
         }
         
         currentMode = mode
         setupView(mode: mode)
+    }
+}
+
+// MARK:- CLLocationManagerDelegate
+extension LandmarkViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        defer {
+            currentLocation = locations.last
+        }
+        
+        if currentLocation == nil {
+            if let userLocation = locations.last {
+                mapViewController?.focusMapOn(location: userLocation)
+            }
+        }
     }
 }
 
