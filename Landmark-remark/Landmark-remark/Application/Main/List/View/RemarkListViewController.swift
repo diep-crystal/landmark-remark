@@ -11,15 +11,22 @@ import UIKit
 final class RemarkListViewController: BaseViewController {
 
     //MARK:- Outlets
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var labelEmpty: UILabel!
     
     //MARK:- Private properties
     private let viewModel = RemarkListViewModel()
+    private var isEmptyList: Bool = false {
+        didSet {
+            tableView.isHidden = isEmptyList
+            labelEmpty.isHidden = !isEmptyList
+        }
+    }
     
     //MARK:- Public methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
+        setupUI()
     }
     
     func fillData(locations: [LocationModel]?) {
@@ -30,13 +37,15 @@ final class RemarkListViewController: BaseViewController {
     }
     
     //MARK:- Private methods
-    private func setupTableView() {
+    private func setupUI() {
+        isEmptyList = viewModel.numberOfItems() == 0
         tableView.registerCell(nibName: RemarkItemTableViewCell.className)
     }
     
     private func setupViewModel() {
         
         viewModel.objectList?.subcribe(hdl: { [weak self](locations: [LocationModel]) in
+            self?.isEmptyList = locations.count == 0
             self?.tableView.reloadData()
         })
     }

@@ -53,6 +53,10 @@ final class LandmarkViewController: BaseViewController {
                 self?.listViewController?.fillData(locations: newCollection?.objectList)
             }
         })
+        
+        viewModel.requestApiFailed?.subcribe(hdl: { [weak self](errorMsg: String) in
+            self?.showMessage(msg: errorMsg)
+        })
     }
     
     private func setupView(mode: LandmarkMode) {

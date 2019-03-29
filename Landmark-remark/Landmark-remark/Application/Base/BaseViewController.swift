@@ -21,4 +21,11 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    func showMessage(msg: String) {
+        let alertVC = UIAlertController(title: "", message: msg, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "common.ok".localize(), style: .default, handler: nil)
+        alertVC.addAction(okAction)
+        present(alertVC, animated: true, completion: nil)
+    }
 }

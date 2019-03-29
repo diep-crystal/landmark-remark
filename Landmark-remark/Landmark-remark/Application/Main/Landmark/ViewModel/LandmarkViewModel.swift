@@ -14,6 +14,7 @@ final class LandmarkViewModel {
     private let service = LandmarkService()
     
     var loadLocationSuccess: DataBinding<LocationCollection>?
+    var requestApiFailed: DataBinding<String>?
     var addLocationSuccess: DataBinding<LocationModel>?
 
     //MARK:- Public methods
@@ -26,8 +27,8 @@ final class LandmarkViewModel {
         Spinner.shared.show()
         service.addNewLocation(model: model).cloudResponse { [weak self](response) in
             self?.addLocationSuccess?.value = LocationModel(parametes: model)
-            }.cloudError { (msg: String, _: Int?) in
-                //TODO: handle error
+            }.cloudError { [weak self](msg: String, _: Int?) in
+                self?.requestApiFailed?.value = msg
             }.finally {
                 Spinner.shared.dismiss()
         }
@@ -37,8 +38,8 @@ final class LandmarkViewModel {
         
         service.getLocations().cloudResponse { [weak self](collection: LocationCollection) in
             self?.loadLocationSuccess?.value = collection
-            }.cloudError { (msgError, _: Int?) in
-                //TODO: handle error
+            }.cloudError { [weak self](msgError, _: Int?) in
+                self?.requestApiFailed?.value = msg
             }.finally {
                 Spinner.shared.dismiss()
         }

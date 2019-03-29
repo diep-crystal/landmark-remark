@@ -1,0 +1,12 @@
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "PJc-xN-vNc"; */
+"PJc-xN-vNc.normalTitle" = "Save";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "Pxm-Hb-XEI"; */
+"Pxm-Hb-XEI.normalTitle" = "Cancel";
+
+/* Class = "UILabel"; text = "Username:"; ObjectID = "Yjw-1w-vYE"; */
+"Yjw-1w-vYE.text" = "Username:";
+
+/* Class = "UILabel"; text = "Notes:"; ObjectID = "a3m-MP-9cq"; */
+"a3m-MP-9cq.text" = "Notes:";

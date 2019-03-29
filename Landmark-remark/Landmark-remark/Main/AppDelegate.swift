@@ -20,10 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         let builder = KSConfigBuilder(apiKey: AppConstants.KumulosAPIKey, secretKey: AppConstants.KumulosSecretKey)
         Kumulos.initialize(config: builder.build())
-        
-//        let model = AddLocationModel(username: "Diep 123", longitude: "105.796084", latitude: "21.015255", note: "Today, I’m not going to teach you anything new or groundbreaking. Rather, I’m just going to remind you about something you already know: the single responsibility principle (SRP). More specifically, I want to discuss how to use it properly with clean architecture, and I’ll assume that you already know a fair bit about it (if not, I suggest you read the sources below and then come back). So let’s not forget to remember to remind ourselves to explicitly consider SRP when making decisions, and hopefully that will help us design better software!")
-//        LandmarkService().addNewLocation(model: model)
-        
+                
         return true
     }
 

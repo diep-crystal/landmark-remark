@@ -12,6 +12,9 @@
 		5F0BC6D9224D31C2007C3384 /* SearchLandmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0BC6D7224D31C2007C3384 /* SearchLandmarkViewController.swift */; };
 		5F0BC6DA224D31C2007C3384 /* SearchLandmarkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F0BC6D8224D31C2007C3384 /* SearchLandmarkViewController.xib */; };
 		5F0BC6DC224D321D007C3384 /* SearchLandmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0BC6DB224D321D007C3384 /* SearchLandmarkViewModel.swift */; };
+		5F0BC6DF224D9FF0007C3384 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0BC6DE224D9FF0007C3384 /* String+Extension.swift */; };
+		5F0BC6E1224DA332007C3384 /* PopupSaveLocationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0BC6E0224DA332007C3384 /* PopupSaveLocationTest.swift */; };
+		5F0BC6E2224DA5EC007C3384 /* PopupSaveLocation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F0BC6E4224DA5EC007C3384 /* PopupSaveLocation.xib */; };
 		5F88BECB224B515E00158120 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F88BECA224B515E00158120 /* AppDelegate.swift */; };
 		5F88BECD224B515E00158120 /* LandmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F88BECC224B515E00158120 /* LandmarkViewController.swift */; };
 		5F88BED0224B515E00158120 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F88BECE224B515E00158120 /* Main.storyboard */; };
@@ -24,7 +27,6 @@
 		5F9EFA45224B8FA40033137C /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EFA44224B8FA40033137C /* Spinner.swift */; };
 		5F9EFA4A224B931E0033137C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5F9EFA4C224B931E0033137C /* Localizable.strings */; };
 		5F9EFA50224B94210033137C /* PopupSaveLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EFA4F224B94210033137C /* PopupSaveLocation.swift */; };
-		5F9EFA52224B94490033137C /* PopupSaveLocation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F9EFA51224B94490033137C /* PopupSaveLocation.xib */; };
 		5F9EFA54224BD4440033137C /* BasePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EFA53224BD4440033137C /* BasePopupView.swift */; };
 		5F9EFA56224BDEBF0033137C /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EFA55224BDEBF0033137C /* AppConstants.swift */; };
 		5F9EFA58224C74740033137C /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9EFA57224C74740033137C /* UIViewController+Extension.swift */; };
@@ -80,6 +82,10 @@
 		5F0BC6D7224D31C2007C3384 /* SearchLandmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLandmarkViewController.swift; sourceTree = "<group>"; };
 		5F0BC6D8224D31C2007C3384 /* SearchLandmarkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchLandmarkViewController.xib; sourceTree = "<group>"; };
 		5F0BC6DB224D321D007C3384 /* SearchLandmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLandmarkViewModel.swift; sourceTree = "<group>"; };
+		5F0BC6DE224D9FF0007C3384 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		5F0BC6E0224DA332007C3384 /* PopupSaveLocationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupSaveLocationTest.swift; sourceTree = "<group>"; };
+		5F0BC6E3224DA5EC007C3384 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PopupSaveLocation.xib; sourceTree = "<group>"; };
+		5F0BC6E6224DA5F1007C3384 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PopupSaveLocation.strings; sourceTree = "<group>"; };
 		5F88BEC7224B515E00158120 /* Landmark-remark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Landmark-remark.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F88BECA224B515E00158120 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F88BECC224B515E00158120 /* LandmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkViewController.swift; sourceTree = "<group>"; };
@@ -99,7 +105,6 @@
 		5F9EFA4B224B931E0033137C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5F9EFA4D224B93210033137C /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5F9EFA4F224B94210033137C /* PopupSaveLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupSaveLocation.swift; sourceTree = "<group>"; };
-		5F9EFA51224B94490033137C /* PopupSaveLocation.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupSaveLocation.xib; sourceTree = "<group>"; };
 		5F9EFA53224BD4440033137C /* BasePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePopupView.swift; sourceTree = "<group>"; };
 		5F9EFA55224BDEBF0033137C /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		5F9EFA57224C74740033137C /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -235,6 +240,7 @@
 			children = (
 				5F88BEE2224B515F00158120 /* Landmark_remarkTests.swift */,
 				5F88BEE4224B515F00158120 /* Info.plist */,
+				5F0BC6E0224DA332007C3384 /* PopupSaveLocationTest.swift */,
 			);
 			path = "Landmark-remarkTests";
 			sourceTree = "<group>";
@@ -306,6 +312,7 @@
 				5F9EFA83224CD88C0033137C /* Date+Extension.swift */,
 				5F9EFA87224CDA4A0033137C /* UITableView+Extension.swift */,
 				5F9EFA89224CE9F70033137C /* UIView+Extension.swift */,
+				5F0BC6DE224D9FF0007C3384 /* String+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -452,7 +459,7 @@
 			isa = PBXGroup;
 			children = (
 				5F9EFA4F224B94210033137C /* PopupSaveLocation.swift */,
-				5F9EFA51224B94490033137C /* PopupSaveLocation.xib */,
+				5F0BC6E4224DA5EC007C3384 /* PopupSaveLocation.xib */,
 				5F9EFA8F224D15510033137C /* PopupSaveLocationViewModel.swift */,
 			);
 			path = Popup;
@@ -631,7 +638,7 @@
 				5F9EFA4A224B931E0033137C /* Localizable.strings in Resources */,
 				5F9EFA62224C77B10033137C /* RemarkMapViewController.xib in Resources */,
 				5F0BC6DA224D31C2007C3384 /* SearchLandmarkViewController.xib in Resources */,
-				5F9EFA52224B94490033137C /* PopupSaveLocation.xib in Resources */,
+				5F0BC6E2224DA5EC007C3384 /* PopupSaveLocation.xib in Resources */,
 				5F88BED5224B515E00158120 /* Assets.xcassets in Resources */,
 				5F88BED0224B515E00158120 /* Main.storyboard in Resources */,
 			);
@@ -807,6 +814,7 @@
 				5F9EFA50224B94210033137C /* PopupSaveLocation.swift in Sources */,
 				5FDCCACC224B77FD0067F14A /* LocationCollection.swift in Sources */,
 				5F9EFA69224CA3330033137C /* RemarkMapViewModel.swift in Sources */,
+				5F0BC6DF224D9FF0007C3384 /* String+Extension.swift in Sources */,
 				5F9EFA88224CDA4A0033137C /* UITableView+Extension.swift in Sources */,
 				5FDCCAC1224B6E9B0067F14A /* LocationModel.swift in Sources */,
 				5F88BECB224B515E00158120 /* AppDelegate.swift in Sources */,
@@ -821,6 +829,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F0BC6E1224DA332007C3384 /* PopupSaveLocationTest.swift in Sources */,
 				5F88BEE3224B515F00158120 /* Landmark_remarkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -849,6 +858,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		5F0BC6E4224DA5EC007C3384 /* PopupSaveLocation.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F0BC6E3224DA5EC007C3384 /* Base */,
+				5F0BC6E6224DA5F1007C3384 /* en */,
+			);
+			name = PopupSaveLocation.xib;
+			sourceTree = "<group>";
+		};
 		5F88BECE224B515E00158120 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

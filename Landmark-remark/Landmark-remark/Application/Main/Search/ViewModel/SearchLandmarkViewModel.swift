@@ -9,7 +9,6 @@
 final class SearchLandmarkViewModel {
     
     var searchList: DataBinding<[LocationModel]>?
-    
     var originalList = [LocationModel]()
     
     init() {
@@ -34,7 +33,6 @@ final class SearchLandmarkViewModel {
             
             return nil
         }).compactMap({$0})
-        
     }
     
     func numberOfItems() -> Int {
