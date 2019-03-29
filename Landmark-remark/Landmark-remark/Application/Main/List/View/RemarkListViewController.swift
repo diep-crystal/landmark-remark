@@ -20,6 +20,7 @@ final class RemarkListViewController: BaseViewController {
         didSet {
             tableView.isHidden = isEmptyList
             labelEmpty.isHidden = !isEmptyList
+            labelEmpty.text = "landmark.list.empty.list".localize()
         }
     }
     

@@ -27,8 +27,8 @@ final class LandmarkViewModel {
         Spinner.shared.show()
         service.addNewLocation(model: model).cloudResponse { [weak self](response) in
             self?.addLocationSuccess?.value = LocationModel(parametes: model)
-            }.cloudError { [weak self](msg: String, _: Int?) in
-                self?.requestApiFailed?.value = msg
+            }.cloudError { [weak self](msgError: String, _: Int?) in
+                self?.requestApiFailed?.value = msgError
             }.finally {
                 Spinner.shared.dismiss()
         }
@@ -38,8 +38,8 @@ final class LandmarkViewModel {
         
         service.getLocations().cloudResponse { [weak self](collection: LocationCollection) in
             self?.loadLocationSuccess?.value = collection
-            }.cloudError { [weak self](msgError, _: Int?) in
-                self?.requestApiFailed?.value = msg
+            }.cloudError { [weak self](msgError: String, _: Int?) in
+                self?.requestApiFailed?.value = msgError
             }.finally {
                 Spinner.shared.dismiss()
         }

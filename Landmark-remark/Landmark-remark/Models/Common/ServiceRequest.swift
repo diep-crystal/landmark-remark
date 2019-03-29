@@ -56,7 +56,7 @@ final class ServiceRequest<T: CoreResponse> {
                 cloudErrorClosure?("Bad format", 500)
             }
         default:
-            cloudErrorClosure?("Bad format", Int(statusCode))
+            cloudErrorClosure?(response.responseMessage ?? "", Int(statusCode))
         }
     }
     
@@ -79,7 +79,7 @@ final class ServiceRequest<T: CoreResponse> {
                 cloudResponseClosure?(obj)
             } else {
                 
-                cloudErrorClosure?("Bad format", 500)
+                cloudErrorClosure?(response.responseMessage ?? "", Int(statusCode))
             }
         default:
             cloudErrorClosure?("Bad format", Int(statusCode))
@@ -98,7 +98,7 @@ final class ServiceRequest<T: CoreResponse> {
             let obj = T(data: ["succcess": 200])
             cloudResponseClosure?(obj)
         default:
-             cloudErrorClosure?("Bad format", Int(statusCode))
+             cloudErrorClosure?(response.responseMessage ?? "", Int(statusCode))
         }
     }
 }

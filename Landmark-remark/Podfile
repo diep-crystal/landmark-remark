@@ -15,6 +15,7 @@ target 'Landmark-remark' do
 
   target 'Landmark-remarkUITests' do
     inherit! :search_paths
+    pod 'KumulosSdkSwift', '~> 3.0'
     # Pods for testing
   end
 

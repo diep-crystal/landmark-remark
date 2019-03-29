@@ -15,6 +15,8 @@
 		5F0BC6DF224D9FF0007C3384 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0BC6DE224D9FF0007C3384 /* String+Extension.swift */; };
 		5F0BC6E1224DA332007C3384 /* PopupSaveLocationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0BC6E0224DA332007C3384 /* PopupSaveLocationTest.swift */; };
 		5F0BC6E2224DA5EC007C3384 /* PopupSaveLocation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F0BC6E4224DA5EC007C3384 /* PopupSaveLocation.xib */; };
+		5F0BC6E8224DBF9F007C3384 /* Landmark_serviceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0BC6E7224DBF9F007C3384 /* Landmark_serviceTest.swift */; };
+		5F0BC6EA224DC7B1007C3384 /* Landmark_searchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0BC6E9224DC7B1007C3384 /* Landmark_searchTest.swift */; };
 		5F88BECB224B515E00158120 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F88BECA224B515E00158120 /* AppDelegate.swift */; };
 		5F88BECD224B515E00158120 /* LandmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F88BECC224B515E00158120 /* LandmarkViewController.swift */; };
 		5F88BED0224B515E00158120 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F88BECE224B515E00158120 /* Main.storyboard */; };
@@ -86,6 +88,8 @@
 		5F0BC6E0224DA332007C3384 /* PopupSaveLocationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupSaveLocationTest.swift; sourceTree = "<group>"; };
 		5F0BC6E3224DA5EC007C3384 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PopupSaveLocation.xib; sourceTree = "<group>"; };
 		5F0BC6E6224DA5F1007C3384 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PopupSaveLocation.strings; sourceTree = "<group>"; };
+		5F0BC6E7224DBF9F007C3384 /* Landmark_serviceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark_serviceTest.swift; sourceTree = "<group>"; };
+		5F0BC6E9224DC7B1007C3384 /* Landmark_searchTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark_searchTest.swift; sourceTree = "<group>"; };
 		5F88BEC7224B515E00158120 /* Landmark-remark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Landmark-remark.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F88BECA224B515E00158120 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F88BECC224B515E00158120 /* LandmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkViewController.swift; sourceTree = "<group>"; };
@@ -241,6 +245,8 @@
 				5F88BEE2224B515F00158120 /* Landmark_remarkTests.swift */,
 				5F88BEE4224B515F00158120 /* Info.plist */,
 				5F0BC6E0224DA332007C3384 /* PopupSaveLocationTest.swift */,
+				5F0BC6E7224DBF9F007C3384 /* Landmark_serviceTest.swift */,
+				5F0BC6E9224DC7B1007C3384 /* Landmark_searchTest.swift */,
 			);
 			path = "Landmark-remarkTests";
 			sourceTree = "<group>";
@@ -572,6 +578,7 @@
 				5F88BEE5224B515F00158120 /* Sources */,
 				5F88BEE6224B515F00158120 /* Frameworks */,
 				5F88BEE7224B515F00158120 /* Resources */,
+				C2D638BE712535A42BF8CF06 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -779,6 +786,32 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Landmark-remarkTests/Pods-Landmark-remarkTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C2D638BE712535A42BF8CF06 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Landmark-remarkUITests/Pods-Landmark-remarkUITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/KSCrash/KSCrash.framework",
+				"${BUILT_PRODUCTS_DIR}/KumulosSdkSwift/KumulosSDK.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KSCrash.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KumulosSDK.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Landmark-remarkUITests/Pods-Landmark-remarkUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -829,8 +862,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F0BC6E8224DBF9F007C3384 /* Landmark_serviceTest.swift in Sources */,
 				5F0BC6E1224DA332007C3384 /* PopupSaveLocationTest.swift in Sources */,
 				5F88BEE3224B515F00158120 /* Landmark_remarkTests.swift in Sources */,
+				5F0BC6EA224DC7B1007C3384 /* Landmark_searchTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

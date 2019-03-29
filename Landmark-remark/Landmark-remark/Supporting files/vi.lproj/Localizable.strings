@@ -5,3 +5,8 @@
   Created by Diep Nguyen on 3/27/19.
   Copyright © 2019 Diep Nguyen. All rights reserved.
 */
+
+"common.ok" = "OK";
+"common.cancel" = "Cancel";
+
+"landmark.list.empty.list" = "No Location found";
